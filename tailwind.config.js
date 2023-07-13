@@ -36,7 +36,8 @@ module.exports = {
 
       },fontFamily:{
         space: ['Chakra Petch', 'sans-serif' ],
-        inter: ['Inter',' sans-serif']
+        inter: ['Inter',' sans-serif'],
+        sans:[ 'DM Sans', 'sans-serif']
       }
     },
   },

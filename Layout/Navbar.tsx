@@ -9,7 +9,7 @@ import Modal from "react-modal";
 import Link from "next/link";
 const customStyles = {
   overlay: {
-    backgroundColor: " rgba(0,0,0,0.25)",
+    backgroundColor: "rgba(0, 0, 0, 0.25)",
   },
   content: {
     top: "50%",
@@ -20,8 +20,11 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     transitionDuration: "0.5s",
     transitionTimingFunction: "ease-in-out",
+    background: "none",
+    border: "none",
   },
 };
+
 const Navbar = () => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
