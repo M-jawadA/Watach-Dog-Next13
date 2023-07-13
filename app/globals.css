@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,11 +19,35 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ background-color: black
+}
+
+.navbar__text{
+  @apply text-white  bg-opacity-90 text-base font-medium;
+}
+.nav__bg{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+
+}
+.watch__bg{
+  background: linear-gradient(214deg, #08000C 0%, #C553ED 34.92%, #ED62B1 52.81%, #FFA234 98.05%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.bg_button{
+  background: linear-gradient(212deg, #08000C 0%, #C553ED 38.09%, #ED62B1 64.75%, #FFA234 97.91%);
+  background-blend-mode: darken;
+}
+.description_bg{
+  background: linear-gradient(42deg, rgba(255, 196, 46, 0.99) 0%, #AD27FF 40.63%, #511278 57.81%, #000 90.65%);
+}
+.custom-class{
+  list-style-type: disc;
+}
+.navpara{
+ margin-left: 50px;
+ margin-right: 50px;
 }
