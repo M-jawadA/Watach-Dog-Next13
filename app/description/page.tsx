@@ -1,7 +1,11 @@
-import React from 'react'
-import Description from '@/Components/Description/Description'
+import React from "react";
+import Description from "@/Components/Description/Description";
+import Navbar from "@/Components/Layout/Navbar";
 export default function page() {
   return (
-  <Description />
-  )
+    <main>
+      <Navbar />
+      <Description />
+    </main>
+  );
 }

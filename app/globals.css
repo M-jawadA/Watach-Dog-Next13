@@ -17,7 +17,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+html{
+  overflow-x: hidden;
+}
 body {
  background-color: black
 }
@@ -28,7 +30,7 @@ body {
 .nav__bg{
 display: flex;
 flex-direction: row;
-justify-content: space-evenly;
+justify-content: center;
 
 }
 .watch__bg{
@@ -51,3 +53,27 @@ background-clip: text;
  margin-left: 50px;
  margin-right: 50px;
 }
+.scrollbar-Table::-webkit-scrollbar {
+  width: 15px;
+}
+.scrollbar-table::-webkit-scrollbar-thumb {
+  background-color: #5B5959;
+}
+
+.scrollbar-table::-webkit-scrollbar-track {
+  background-color: #D8D8D8;
+}
+.container {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
+.container::-webkit-scrollbar { 
+  display: none;  
+}
+
+
+
+
+
+
+
