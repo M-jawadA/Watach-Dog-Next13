@@ -55,6 +55,7 @@ background-clip: text;
 }
 .scrollbar-Table::-webkit-scrollbar {
   width: 15px;
+
 }
 .scrollbar-table::-webkit-scrollbar-thumb {
   background-color: #5B5959;
@@ -70,6 +71,26 @@ background-clip: text;
 .container::-webkit-scrollbar { 
   display: none;  
 }
+::-webkit-scrollbar {
+  width: 17px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #5B5959;
+  width: 15px;
+  border-radius: 5px;
+  border-radius: 10px;
+  height: 90%;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #D8D8D8;
+  width: 15px;
+  height: 120px;
+  border-radius: 10px;
+  
+}
+
 
 
 

@@ -1,7 +1,23 @@
+" use client"
 import { data } from "@/utils/rawData";
 
 
+
 const TransactionTable = () => {
+  const scrollbarStyle: React.CSSProperties = {
+    width: '15px',
+  };
+
+  const thumbStyle: React.CSSProperties = {
+    width: '15px',
+    height: '176px',
+    backgroundColor: '#D8D8D8',
+  };
+
+  const trackStyle: React.CSSProperties = {
+    backgroundColor: '#5B5959',
+  };
+
   const array = Array(20).fill(data[0]);
   const random = Math.floor(Math.random() * 11);
   return (
@@ -9,14 +25,16 @@ const TransactionTable = () => {
       <p className="py-2 text-white font-sans font-bold text-xl md:text-4xl  leading-tight tracking-tighter">
         NFT Transaction
       </p>
-      <div className="w-max-full overflow-x-auto">
-        <table className="w-full bg-[#333639] px-10 py-10 md:overflow-x-auto scrollbar-Table">
+  =
+    
+      <div className="w-max-full overflow-x-auto overflow-y-scroll content h-[800px] scrollbar-Table">
+        <table className="w-full bg-[#333639] px-10 py-10 overflow-x-auto  md:overflow-x-auto ">
           <thead>
             <tr className="bg-[#E1E1E1] bg-opacity-10 h-12">
               <th className="py-2 text-xs md:text-xl text-bold text-white">
                 Txn Hash
               </th>
-              <th className="py-2 text-xs md:text-xl text-bold text-white">
+              <th className="py-2 text-xs md:text-xl text-bold text-white text-center w-6 ">
                 Date
               </th>
               <th className="py-2 text-xs md:text-xl text-bold text-white">
@@ -46,7 +64,7 @@ const TransactionTable = () => {
                   <td className="py-2  px-5 watch__bg  text-base font-sans font-normal">
                     {item.TxnHash}
                   </td>
-                  <td className="py-2  px-5 watch__bg text-base font-sans font-normal">
+                  <td className="py-2  px-0 md:px-5 watch__bg text-base font-sans font-normal w-6 no-wrap">
                     {item.Date}
                   </td>
                   <td className="py-2 px-5  text-white text-base font-sans font-normal">

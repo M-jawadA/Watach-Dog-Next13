@@ -18,7 +18,7 @@ const Profitability = () => {
           3M / 6 M / 12M
         </p>
       </div>
-      <div className="flex flex-col gap-3 mb-20">
+      <div className="flex flex-col gap-3 mb-20 overflow-y-scroll content scrollbar-Table">
         {[1, 2, 3, 4].map((item, index) => {
           return (
             <div

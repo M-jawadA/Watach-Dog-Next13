@@ -19,8 +19,8 @@ const CollectionsTable = () => {
         </p>
       </div>
 
-      <div className="max-w-full w-full overflow-x-auto ">
-        <table className="w-full min-w-[100px] bg-[#333639] px-10 py-10 scrollable-table  overflow-x-auto scrollbar-thin scrollbar-thumb-black scrollbar-track-gray-300">
+      <div className="max-w-full w-full overflow-x-auto  overflow-scroll content scrollbar-Table">
+        <table className="w-full min-w-[100px] bg-[#333639] px-10 py-10 scrollbar-Table overflow-scroll scrollbar-thin scrollbar-thumb-black scrollbar-track-gray-300">
           <thead>
             <tr className="">
               <th className="py-4 text-[#E2E2E2] text-base w-[45%] text-start">

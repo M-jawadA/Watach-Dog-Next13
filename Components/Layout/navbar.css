@@ -22,3 +22,6 @@
 .nav-para{
     margin-left: 60px;
 }
+.navbar__bg{
+    background: linear-gradient(42deg, rgba(255, 196, 46, 0.99) 8.85%, #AD27FF 33.85%, #511278 44.79%, #000 70.83%);
+}
