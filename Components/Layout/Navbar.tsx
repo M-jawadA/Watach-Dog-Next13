@@ -47,7 +47,7 @@ const Navbar = () => {
   }
   return (
     <>
-      <div className="h-24 flex flex-row items-center md:justify-end nav__bg max-w-[2000px] m-auto navbar__bg">
+      <div className="h-24 flex flex-row items-center md:justify-end nav__bg max-w-[2000px] m-auto ">
         <div className="flex flex-row gap-10 items-center ml-4 lg:ml-16 div1 ">
           <Link href="/">
             <Image src={logo} alt="logo" className="sm:ml-24 ml-12" />

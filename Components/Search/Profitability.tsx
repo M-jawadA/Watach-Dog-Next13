@@ -23,7 +23,7 @@ const Profitability = () => {
           return (
             <div
               key={index}
-              className="flex flex-row justify-evenly sm:justify-between items-center "
+              className="flex flex-row justify-evenly sm:justify-between items-center pl-2"
             >
               <div className="w-1/2 flex flex-row justify-around items-center ">
                 <Image

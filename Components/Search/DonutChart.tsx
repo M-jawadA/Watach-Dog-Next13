@@ -4,8 +4,8 @@ import Chart from "react-apexcharts";
 
 
 const DonutChart = () => {
-  const isMediumDevice = window.matchMedia("(max-width: 768px)").matches;
-  const chartWidth = isMediumDevice ? 300 : 450;
+  const isMediumDevice = window.matchMedia("(max-width: 900px)").matches;
+  const chartWidth = isMediumDevice ? 350 : 450;
   const chartHeight = isMediumDevice ? 300 : 450;
 
   const chartOptions = {

@@ -3,7 +3,7 @@ import DonutChart from "./DonutChart";
 
 const Balance = () => {
   return (
-    <div className="md:max-w-[48%] max-w-[90%] max-h-max md:max-h-[579px] mb-10 md:mb-0 m-auto md:m-0 w-full  bg-[#333639] justify-start md:gap-10: rounded-[24px] flex flex-col">
+    <div className="md:max-w-[48%] max-w-[90%] max-h-max md:max-h-[709px] mb-10 md:mb-0 m-auto md:m-0 w-full  bg-[#333639] justify-start md:gap-10: rounded-[24px] flex flex-col">
       <div className="flex flex-row justify-between px-7 md:px-[55px] items-start mb-14">
         <div className="flex flex-col">
           <p className="text-white mt-5 font-sans text-2xl font-medium leading-10 tracking-tight">

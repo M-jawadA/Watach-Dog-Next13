@@ -1,4 +1,4 @@
-import { data } from "@/utils/rawData";
+import { data } from "@/lib/rawData";
 import small from "../../public/Images/png/small.png";
 import Image from "next/image";
 import StarPurple500Icon from "@mui/icons-material/StarPurple500";
@@ -51,7 +51,7 @@ const CollectionsTable = () => {
                         {index % 2 == 0 ? (
                           <p>Clone X</p>
                         ) : (
-                          <p>Bored Ape Yacht Club</p>
+                          <p>Clone X</p>
                         )}
                         <StarPurple500Icon className="text-[#407FDB] font-xs" />
                       </div>
