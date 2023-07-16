@@ -1,12 +1,27 @@
 "use client";
 import React from "react";
 import Chart from "react-apexcharts";
+import { useState,useEffect } from "react";
 
 
 const DonutChart = () => {
-  const isMediumDevice = window.matchMedia("(max-width: 900px)").matches;
-  const chartWidth = isMediumDevice ? 350 : 450;
-  const chartHeight = isMediumDevice ? 300 : 450;
+  const [chartWidth, setChartWidth] = useState(450);
+  const [chartHeight, setChartHeight] = useState(450);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMediumDevice = window.matchMedia("(max-width: 900px)").matches;
+      const width = isMediumDevice ? 350 : 450;
+      const height = isMediumDevice ? 300 : 450;
+      setChartWidth(width);
+      setChartHeight(height);
+    };
+
+    handleResize(); // Initial check
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const chartOptions = {
     series: [23, 12, 65],
