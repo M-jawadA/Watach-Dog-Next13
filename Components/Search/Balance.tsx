@@ -17,7 +17,7 @@ const Balance = () => {
           3M / 6 M / 12M
         </p>
       </div>
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex justify-center items-center overflow-clip">
         <DonutChart />
       </div>
     </div>

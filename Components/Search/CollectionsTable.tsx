@@ -1,13 +1,22 @@
+"use client"
 import { data } from "@/lib/rawData";
 import small from "../../public/Images/png/small.png";
 import Image from "next/image";
 import StarPurple500Icon from "@mui/icons-material/StarPurple500";
+import { useState ,useEffect} from "react";
+import { Collections } from "@/index";
+import { fetchCollections } from "@/lib/requests";
 
 
 const CollectionsTable = () => {
+  const [datas, setData] = useState<Collections[]>();
+  useEffect(() => {
+    fetchCollections().then((res) => setData(res.data));
+  }, []);
   const array = Array(20).fill(data[0]);
   const random = Math.floor(Math.random() * 11);
   let count: number = 1;
+
   return (
     <div className="py-10 overflow-x-auto bg-[#333639] px-10 m-10 rounded-[30px] ">
       <div className="flex flex-row text-center items-center justify-between gap-3">
@@ -33,7 +42,8 @@ const CollectionsTable = () => {
             </tr>
           </thead>
           <tbody>
-            {[1, 2, 3, 4].map((item, index) => {
+            {datas?.map((item, index) => {
+              console.log(item)
               return (
                 <tr
                   key={index}
@@ -44,14 +54,14 @@ const CollectionsTable = () => {
                   <td className="py-2 px-5 text-white text-base font-sans font-normal">
                     <div className="flex flex-row items-center justify-start ml-2 md:ml-8 gap-2 md:gap-8">
                       <span className="text-sm lg:text-[27px] text-bold">
-                        {count++}
+                       {item.id}
                       </span>
                       <Image src={small} alt="img" />
                       <div className="text-sm lg:text-[27px] font-normal flex gap-2 flex-row text-white font-sans text-center items-center">
                         {index % 2 == 0 ? (
-                          <p>Clone X</p>
+                          <p>{item.name}</p>
                         ) : (
-                          <p>Clone X</p>
+                          <p>{item.name}</p>
                         )}
                         <StarPurple500Icon className="text-[#407FDB] font-xs" />
                       </div>
@@ -60,25 +70,25 @@ const CollectionsTable = () => {
                   <td className="py-2 px-8 text-base font-sans font-normal">
                     <div className="flex-flex-col text-white items-center gap-1">
                       <p className="text-sm lg:text-[27px] text-bold font-sans">
-                        10.3 ETH
+                       {item.floorprice.price + "ETH"}
                       </p>
                       <p
                         className={`text-sans text-xs md:text-[16px] text-normal  pl-0 sm:pl-14 pt-2 ${
                           index % 2 === 0 ? "text-[#31CF61]" : "text-[#CF3131]"
                         } `}
                       >
-                        +3.86
+                        {item.floorprice.profitLoss}
                       </p>
                     </div>
                   </td>
                   <td className="py-2 px-5 text-sm lg:text-[27px] text-white text-bold font-sans">
-                    10.3 ETH
+                   {item.profit}
                   </td>
                   <td className="py-2 px-5 text-white text-[27px] text-bold text-base font-sans font-normal">
-                    {Math.floor(Math.random() * 11)}
+                 {item.minted}
                   </td>
                   <td className="py-2 px-5 text-white text-base text-[27px] text-bold font-sans font-normal">
-                    {Math.floor(Math.random() * 39)}
+                   {item.minted}
                   </td>
                 </tr>
               );

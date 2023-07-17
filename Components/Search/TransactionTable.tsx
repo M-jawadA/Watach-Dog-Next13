@@ -75,7 +75,7 @@ const currentData = datas?.slice(startIndex, endIndex) ?? [];
             <th className="py-2 text-xs md:text-xl text-bold text-white text-center w-[15%] ">
               Date
             </th>
-            <th className="py-2 text-xs md:text-xl text-bold text-white">
+            <th className="py-2 text-xs md:text-xl text-bold text-white ">
               From
             </th>
             <th className="py-2 text-xs md:text-xl text-bold text-white">
@@ -104,8 +104,8 @@ const currentData = datas?.slice(startIndex, endIndex) ?? [];
               <td className="py-2 px-0 md:px-5 watch__bg text-base font-sans font-normal  ">
                 {item.Date}
               </td>
-              <td className="py-2 px-5 text-white text-base font-sans font-normal">
-                {item.From}
+              <td className="py-2 px-5 text-white text-xs sm:text-base font-sans font-normal">
+               {item.From}
               </td>
               <td className="py-2 px-5 text-white text-base font-sans font-normal">
                 {item.To}

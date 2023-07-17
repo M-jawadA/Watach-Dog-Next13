@@ -1,37 +1,29 @@
 "use client";
 import React from "react";
 import ReactApexChart from "react-apexcharts";
+import { chart } from "@/lib/rawData";
+import { useState,useEffect } from "react";
+import { fetchScatterChart } from "@/lib/requests";
+import { Scatter } from "@/index";
 
 
 const ScatterChart: React.FC = () => {
+useEffect(()=>{
+fetchScatterChart().then(res=>{
+  setData(res.data);
+})
+  },[])
+  const [data,setData]=useState<Scatter[]>();
   const series = [
     {
       name: "SAMPLE A",
-      data: [
-        [16.4, 0],
-        [21.7, 1],
-        [25.4, 3],
-        [19, 5],
-        [10.9, 0],
-        [13.6, 1],
-        [10.9, 3],
-        [10.9, 5],
-      ],
-      color: "#A510FF", // Change color to #A510FF for SAMPLE A
+      data: chart[0].sampleA,
+      color:  chart[0].color 
     },
     {
       name: "SAMPLE B",
-      data: [
-        [36.4, 0],
-        [1.7, 1],
-        [5.4, 3],
-        [9, 5],
-        [1.9, 0],
-        [3.6, 1],
-        [1.9, 3],
-        [1.9, 5],
-      ],
-      color: "#F19C44", // Change color to #F19C44 for SAMPLE B
+      data: chart[1].sampleB,
+      color:  chart[1].color 
     },
   ];
 
@@ -48,7 +40,7 @@ const ScatterChart: React.FC = () => {
       },
     },
     xaxis: {
-      tickAmount: 10,
+      tickAmount: 5,
       labels: {
         formatter: (val: any) => parseFloat(val).toFixed(1),
         style: {
@@ -68,14 +60,21 @@ const ScatterChart: React.FC = () => {
         },
       },
     },
+    legend: {
+      labels: {
+        colors: '#ffffff', // Set the legend text color to white
+      },
+    },
     stroke: {
-      width: 2, // Reduce the width by 20%
+      width: 2, 
       dashArray: 0,
+    
     },
     markers: {
-      strokeColors: ["#A510FF", "#F19C44"], // Change marker colors
-      strokeWidth: 2, // Reduce the width by 20%
+      strokeColors: ["#A510FF", "#F19C44"], 
+      strokeWidth: 2, 
       fillOpacity: 0.5,
+      colors:"#fff"
     },
   };
 

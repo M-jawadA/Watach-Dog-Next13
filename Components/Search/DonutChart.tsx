@@ -2,13 +2,16 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import { useState,useEffect } from "react";
+import { Donut } from "@/index";
+import { fetchDonutChart } from "@/lib/requests";
 
 
 const DonutChart = () => {
   const [chartWidth, setChartWidth] = useState(450);
   const [chartHeight, setChartHeight] = useState(450);
-
+const [data,setData]=useState<Donut>()
   useEffect(() => {
+fetchDonutChart().then(res=>setData(res.data))
     const handleResize = () => {
       const isMediumDevice = window.matchMedia("(max-width: 900px)").matches;
       const width = isMediumDevice ? 350 : 450;
@@ -17,16 +20,18 @@ const DonutChart = () => {
       setChartHeight(height);
     };
 
-    handleResize(); // Initial check
+    handleResize(); 
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+    
   }, []);
-
+ 
+  console.log(data?.series)
   const chartOptions = {
-    series: [23, 12, 65],
+    series: data?.series ||[23, 12, 65] ,
     labels: [],
-    colors: ["#F19C44", "#D946AA", "#A510FF"],
+    colors: data?.color ||  ["#F19C44", "#D946AA", "#A510FF"] ,
     chart: {
       maxWidth: chartWidth,
       maxHeight: chartHeight,
@@ -40,6 +45,13 @@ const DonutChart = () => {
         donut: {
           size: "60px",
         },
+      },
+    },
+    legend: {
+      labels: {
+        colors: '#ffffff',
+        fontSize:"10px",
+        marginRight:"10px"
       },
     },
     dataLabels: {
