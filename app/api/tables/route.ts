@@ -1,21 +1,28 @@
 import { NextResponse } from "next/server";
-import  { tableData ,collectionData} from "@/lib/rawData";
-export async function GetCollections (request:Request,response:Response){
-    try{
-    return NextResponse.json({message:"OK", status:200,data:collectionData})
-    }
-    catch(err){
-        return NextResponse.json({message:"not ok", status:500,err})
-    }
-    }
+import { tableData } from "@/lib/rawData";
 
-export async function GET (request:Request,response:Response){
-try{
-return NextResponse.json({message:"OK", status:200,data:tableData})
-}
-catch(err){
-    return NextResponse.json({message:"not ok", status:500,err})
-}
+class CustomError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "CustomError";
+  }
 }
 
 
+export async function GET(request: Request, response: Response) {
+  try {
+    if (Math.random() < 0.5) {
+      throw new CustomError("Custom Error occurred");
+    }
+
+    return NextResponse.json({ message: "OK", status: 200, data: tableData });
+  } catch (err: any) {
+    if (err instanceof CustomError) {
+      return NextResponse.json({ message: "Custom Error", status: 400, error: err });
+    } else if (err instanceof CustomError) {
+      return NextResponse.json({ message: "Not Found", status: 404, error: err });
+    } else {
+      return NextResponse.json({ message: "Internal Server Error", status: 500, error: err });
+    }
+  }
+}

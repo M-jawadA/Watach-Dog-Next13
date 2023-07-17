@@ -62,7 +62,7 @@ fetchScatterChart().then(res=>{
     },
     legend: {
       labels: {
-        colors: '#ffffff', // Set the legend text color to white
+        colors: '#ffffff', 
       },
     },
     stroke: {
